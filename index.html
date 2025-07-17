@@ -11,47 +11,45 @@
 
   <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DWJ000004R4I9" method="POST">
 
-    <!-- Salesforce required hidden fields -->
+    <!-- Salesforce Required Hidden Fields -->
     <input type="hidden" name="oid" value="00DWJ000004R4I9">
     <input type="hidden" name="retURL" value="http://">
 
-    <!-- Basic Lead Fields -->
+    <!-- Standard Lead Fields -->
     <label for="first_name">First Name</label><br>
-    <input id="first_name" maxlength="40" name="first_name" size="40" type="text" /><br><br>
+    <input id="first_name" name="first_name" maxlength="40" size="40" type="text" /><br><br>
 
     <label for="last_name">Last Name</label><br>
-    <input id="last_name" maxlength="80" name="last_name" size="40" type="text" /><br><br>
+    <input id="last_name" name="last_name" maxlength="80" size="40" type="text" /><br><br>
 
     <label for="email">Email</label><br>
-    <input id="email" maxlength="80" name="email" size="40" type="email" /><br><br>
+    <input id="email" name="email" maxlength="80" size="40" type="email" /><br><br>
 
     <label for="company">Company</label><br>
-    <input id="company" maxlength="40" name="company" size="40" type="text" /><br><br>
+    <input id="company" name="company" maxlength="40" size="40" type="text" /><br><br>
 
     <label for="city">City</label><br>
-    <input id="city" maxlength="40" name="city" size="40" type="text" /><br><br>
+    <input id="city" name="city" maxlength="40" size="40" type="text" /><br><br>
 
     <label for="state">State/Province</label><br>
-    <input id="state" maxlength="20" name="state" size="40" type="text" /><br><br>
+    <input id="state" name="state" maxlength="20" size="40" type="text" /><br><br>
 
-    <!-- Referral__c Field (custom) -->
+    <!-- ✅ Referral_Code__c (Custom Field) -->
     <label for="00NWJ000004JRyI">Referral Code</label><br>
     <input id="00NWJ000004JRyI" name="00NWJ000004JRyI" type="text" size="40" readonly /><br><br>
 
-    <!-- Appointment Date -->
+    <!-- Appointment Fields -->
     <label for="00NWJ0000044RaQ">Appointment Date</label><br>
     <input id="00NWJ0000044RaQ" name="00NWJ0000044RaQ" type="date" /><br><br>
 
-    <!-- Appointment Time -->
     <label for="00NWJ0000044Tyn">Appointment Time</label><br>
     <input id="00NWJ0000044Tyn" name="00NWJ0000044Tyn" type="time" /><br><br>
 
-    <!-- Submit Button -->
     <input type="submit" name="submit" value="Submit Lead" />
 
   </form>
 
-  <!-- JavaScript to auto-fill Referral Code from URL -->
+  <!-- ✅ Auto-fill Referral from URL like ?referral=REF-0003 -->
   <script>
     function getQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
